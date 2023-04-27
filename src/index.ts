@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 import cors from 'cors'
 import { productRouter } from './routers/productRouter'
+import { brandRouter } from './routers/brandRouter'
 
 const app = express()
 
@@ -13,3 +14,4 @@ app.get("/ping", (req: Request, res: Response) => {
     res.status(200).send("pong")
 })
 app.use("/products", productRouter)
+app.use("/brands", brandRouter)
